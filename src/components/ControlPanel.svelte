@@ -1,0 +1,35 @@
+<script>
+    import PanelStore from "../stores/PanelStore.js";
+    import Panel from "../shared/Panel.svelte";
+    
+    let panelInstances = [];
+
+    /*
+        Insert comment here
+    */
+    const printData = (data) => {
+        let {index, command} = data;
+        console.log("Command received:");
+        console.log([index, command]);
+        switch (command) {
+            case "show":
+                panelInstances[index].lockForm(true);
+                break;
+            case "hide":
+                panelInstances[index].lockForm(false);
+                break;
+            default:
+                console.log("Function not ready!");
+                break;
+        }
+    }
+
+</script>
+
+<section class="section">
+    <div class="columns is-multiline">
+        {#each $PanelStore as panel, i}
+            <Panel bind:this={panelInstances[i]} {...panel} on:dataCollected={(e) => printData(e.detail)} />
+        {/each}
+    </div>
+</section>

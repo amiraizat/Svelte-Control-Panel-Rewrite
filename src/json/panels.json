@@ -1,0 +1,137 @@
+[
+    {
+      "index":0,
+      "id":"title-time",
+      "title":"Title & Time",
+      "items":[
+        {
+          "name":"title",
+          "type":"textarea",
+          "label":"Title",
+          "placeholder":"Ministry of Health Daily Press Conference"
+        },
+        {
+          "name":"time",
+          "type":"input",
+          "label":"Time",
+          "placeholder":"Stream starts at 17: 00"
+        }
+      ],
+      "indicator":false,
+      "preset":null,
+      "buttons":["update"],
+      "lock":false,
+      "table":null
+    },
+    {
+      "index":1,
+      "id":"lowerthirds-left",
+      "title":"Lowerthirds Left",
+      "items":[
+        {
+          "name":"name",
+          "type":"input",
+          "label":"Name",
+          "placeholder":"Didier Drogba"
+        },
+        {
+          "name":"designation",
+          "type":"input",
+          "label":"Designation",
+          "placeholder":"Chelsea FC Legend"
+        }
+      ],
+      "indicator":true,
+      "preset":null,
+      "buttons":["show","hide","preview"],
+      "lock":false,
+      "table":"name_designation"
+    },
+    {
+      "index":2,
+      "id":"lowerthirds-right",
+      "title":"Lowerthirds Right",
+      "items":[
+        {
+          "name":"name",
+          "type":"input",
+          "label":"Name",
+          "placeholder":"Frank Lampard"
+        },
+        {
+          "name":"designation",
+          "type":"input",
+          "label":"Designation",
+          "placeholder":"Chelsea FC Manager"
+        }
+      ],
+      "indicator":true,
+      "preset":null,
+      "buttons":["show","hide","preview"],
+      "lock":false,
+      "table":"name_designation"
+    },
+    {
+      "index":3,
+      "id":"lowerthirds-center",
+      "title":"Lowerthirds Center",
+      "items":[
+        {
+          "name":"headline",
+          "type":"input",
+          "label":"Headline",
+          "placeholder":"Premier League Season Cancelled"
+        },
+        {
+          "name":"details",
+          "type":"input",
+          "label":"Details",
+          "placeholder":"Liverpool did not win the title, let's laugh at their fans"
+        }
+      ],
+      "indicator":true,
+      "preset":null,
+      "buttons":["show","hide","preview"],
+      "lock":false,
+      "table":"headline_detail"
+    },
+    {
+      "index":4,
+      "id":"location",
+      "title":"Location",
+      "items":[
+        {
+          "name":"location",
+          "type":"input",
+          "label":"Location",
+          "placeholder":"Stamford Bridge"
+        }
+      ],
+      "indicator":true,
+      "preset":null,
+      "buttons":["show","hide","preview"],
+      "lock":false,
+      "table":"location"
+    },
+    {
+      "index":5,
+      "id":"covid19-statistics",
+      "title":"COVID-19 Statistics",
+      "items":[
+        {"name":"newcases","type":"input","label":"New Cases","placeholder":""},
+        {
+          "name":"totalcases",
+          "type":"input",
+          "label":"Total Cases",
+          "placeholder":""
+        },
+        {"name":"recovered","type":"input","label":"Recovered","placeholder":""},
+        {"name":"deaths","type":"input","label":"Deaths","placeholder":""}
+      ],
+      "indicator":true,
+      "preset":null,
+      "buttons":["show","hide","preview"],
+      "lock":false,
+      "table":null
+    }
+]
