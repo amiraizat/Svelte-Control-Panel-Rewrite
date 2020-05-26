@@ -16,7 +16,5 @@
 
 <section class="section">
 	<Tab currentTab={selection} on:changeTab={(e) => changeComponent(e.detail)} />
-	<section class="section">
-		<svelte:component this={components[selection]} />
-	</section>
+	<svelte:component this={components[selection]} />
 </section>

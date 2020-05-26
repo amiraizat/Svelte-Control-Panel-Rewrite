@@ -1,4 +1,5 @@
 <script>
+
     import PanelStore from "../stores/PanelStore.js";
     import Panel from "../shared/Panel.svelte";
     
@@ -9,8 +10,6 @@
     */
     const printData = (data) => {
         let {index, command} = data;
-        console.log("Command received:");
-        console.log([index, command]);
         switch (command) {
             case "show":
                 panelInstances[index].lockForm(true);

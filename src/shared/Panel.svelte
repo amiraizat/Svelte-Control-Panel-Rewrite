@@ -38,8 +38,6 @@
 		let inputs = document.getElementById(id).querySelectorAll("input, textarea");
 		inputs.forEach((input) => input.disabled = status);
         panelController.setLock = status;
-        console.log("panelController.lock:");
-        console.log(panelController.lock);
         if (panelController.preset) {
             presetController.setLock(status)
         };
@@ -72,8 +70,6 @@
 			returnObj["inputs"] = inputsArr;
 			return returnObj;
         };
-        console.log("Writing Locks to store:");
-        console.log([formState()]);
 		LockStore.update(newLock => {
 			newLock[panelController.index] = formState();
 			return newLock;
@@ -97,7 +93,6 @@
 		let inputs = document.getElementById(id).querySelectorAll("input, textarea");
 		let valArr = $LockStore[panelIndex].inputs;
         inputs.forEach((input, i) => input.value = valArr[i]);
-        
         // Controller
 		panelController.setLock = $LockStore[panelIndex].panel;
 		lockForm(panelController.lock);
