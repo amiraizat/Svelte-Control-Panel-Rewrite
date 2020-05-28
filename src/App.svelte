@@ -5,6 +5,7 @@
 	import PresetEditor from "./components/PresetEditor.svelte";
 	import Tab from "./shared/Tab.svelte";
 	
+	// Selection changes the component being displayed
 	let selection = 0;
 	const components = [ControlPanel, PresetEditor];
 

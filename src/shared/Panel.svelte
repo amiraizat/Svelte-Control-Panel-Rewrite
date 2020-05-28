@@ -7,6 +7,9 @@
 
     export let index, id, indicator, preset, title, items, buttons, lock, table;
 
+    /*
+        Do not use the exported "props" variables, it gets too confusing
+    */
     let panelController = {
         index: index,
         id: id,
@@ -78,7 +81,7 @@
 
     /*
 		Reads all necessary lock information from LockStore,
-		manipulates panelController and controls the lock
+		manipulates panelController and restores the lock states
 	*/
 	const lockRead = () => {
         let panelIndex = panelController.index;
@@ -99,14 +102,15 @@
 	}
 
     /*
-        Insert comment here
+        Adds a number to the panel title. Adds 0 in front if the number is less than 10
     */
     const indexTitle = (index, title) => {
         return index < 10 ? `0${index}. ${title}` : `${index}. ${title}`;
     }
 
     /*
-        Insert comment here
+        If preset is triggered by selection or using the buttons,
+        forms will be updated with preset data
     */
     const updateForms = (data) => {
         let {index, content} = data;
@@ -141,6 +145,9 @@
 
         <div class="card-content">
 
+            <!-- Indicator is necessary to convey information that the animation
+                associated with the panel is active. It needs to be immediately
+                recognizeable even during a stressful live production environment -->
             {#if panelController.indicator}
                 <div class="field">
                     <div class="control has-icons-left">
@@ -166,7 +173,12 @@
                 </div>
             {/if}
 
+            <!-- Important data lives under this #id -->
             <div id={panelController.id}>
+                <!-- Using presets is the ideal way to do send data to the animation.
+                    Live production is often stressful, and mistakes are bound to happen
+                    if the user manually input data mid stream. Manual input should be
+                    reserved for unexpected events, everything else should be in preset -->
                 {#if panelController.preset}
                     <Preset bind:this={presetController} presetTable={panelController.table} panelId={panelController.id} on:presetChange={(e) => updateForms(e.detail)} />
                 {/if}
@@ -187,6 +199,8 @@
                         </div>
                     {/if}
                 {/each}
+
+                <!-- Buttons sends commands, take that command and process it -->
                 <Button bind:this={buttonController} buttons={panelController.buttons} on:clicked={(e) => collectPanelData(e.detail)} />
             </div>
 

@@ -1,7 +1,7 @@
 <script>
 
-    import PanelStore from "../stores/PanelStore.js";
     import Panel from "../shared/Panel.svelte";
+    import PanelStore from "../stores/PanelStore.js";
     
     let panelInstances = [];
 

@@ -17,7 +17,7 @@
     const dispatch = createEventDispatcher();
 
     /*
-        Insert comment here
+        Disables the preset controls
     */
     export const setLock = (status) => {
         let presetControls = document.getElementById(presetController.id).querySelectorAll(".preset");
@@ -25,7 +25,7 @@
     }
 
     /*
-        Insert comment here
+        Changes the displayed option inside <select>
     */
     export const changeOption = (index) => {
         if (optionInstances.length > 0) {
@@ -35,11 +35,13 @@
     }
 
     /*
-        Insert comment here
+        Forces the preset to choose an option
     */
     export const forceSelect = (index) => {
-        changeOption(index);
-        collectPresetData(index);
+        if (optionInstances.length > 0) {
+            changeOption(index);
+            collectPresetData(index);
+        }
     }
 
     /*

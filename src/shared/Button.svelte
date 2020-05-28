@@ -5,6 +5,9 @@
     export let buttons;
     const dispatch = createEventDispatcher();
 
+    /*
+        Pass the command to the parent, they will handle the rest
+    */
     const clicked = (command) => {
         dispatch("clicked", command)
     }
@@ -21,7 +24,7 @@
                 {:else if button === "hide"}
                     <button on:click={() => clicked("hide")} class="button is-danger is-outlined">Hide</button>
                 {:else if button === "preview"}
-                    <button on:click={() => clicked("prev")} class="button is-warning is-outlined">Prev</button>
+                    <button on:click={() => clicked("preview")} class="button is-warning is-outlined">Prev</button>
                 {:else if button === "update"}
                     <button on:click={() => clicked("update")} class="button is-primary is-outlined">Update</button>
                 {/if}
